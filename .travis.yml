@@ -3,11 +3,11 @@ services:
 
 before_install:
 - docker build --tag=myimage .
-- docker run -d --name myimage -e LC_ALL="en_US.UTF-8" -e LANG="en_US.UTF-8" -v $(pwd):/travis -w /travis myimage:latest tail -f /dev/null
+- docker run -d --name myimage -e LANG="en_US.UTF-8" -v $(pwd):/travis -w /travis myimage:latest tail -f /dev/null
 - docker ps
 
 script:
-- docker exec -t myimage bash -c ls -alh
-- docker exec -t myimage bash -c pwd
-- docker exec -t myimage bash -c python -v
+- docker exec -t myimage bash -c "ls -alh"
+- docker exec -t myimage bash -c "pwd"
+- docker exec -t myimage bash -c "python -v"
 # - docker exec -t myimage bash -c python screen.py 
