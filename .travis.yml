@@ -1,10 +1,12 @@
+language: python
+
 services:
   - docker
 
 before_install:
 - docker build --tag=myimage .
 - docker ps -a
-- docker run -i -t myimage /bin/bash
+- docker run --rm -it myimage /bin/bash
 
 script:
-- python screen.py
+- docker exec -t myimage bash -c "python screen.py"
