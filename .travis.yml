@@ -3,7 +3,7 @@ services:
 
 before_install:
 - docker build --tag=myimage .
-- docker run -d --name myimage -e LANG="en_US.UTF-8" -v $(pwd):/travis -w /travis myimage:latest tail -f /dev/null
+- docker run -d --name myimage -e LANG="en_US.UTF-8" -v $(pwd):/user/baur myimage:latest tail -f /dev/null
 - docker ps
 
 script:
