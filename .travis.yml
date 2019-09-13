@@ -10,4 +10,4 @@ script:
 - docker exec -t myimage bash -c "ls -alh"
 - docker exec -t myimage bash -c "pwd"
 # - docker exec -t myimage bash -c "python -v"
-- docker exec -t myimage bash -c python screen.py 
+- docker exec -t myimage bash -c "python screen.py" 
