@@ -5,8 +5,6 @@ services:
 
 before_install:
 - docker build --tag=myimage .
-- docker ps -a
-- docker run --rm -it myimage /bin/bash
 
 script:
-- docker exec -t myimage bash -c "python screen.py"
+- docker run -it --rm --name myimage -v "$PWD":/usr/baur python:3 python screen.py
