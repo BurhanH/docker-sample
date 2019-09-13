@@ -20,8 +20,9 @@ before_install:
 script:
 - docker run myimage /bin/sh -c "python screen.py"
 # checking results in csv file
-- docker run myimage /bin/sh -c "cat my_dataset.csv"
+# - docker run myimage /bin/sh -c "cat my_dataset.csv"
+- docker run myimage /bin/sh -c "ls -lah"
 
-- docker run myimage /bin/sh -c "python screen_2.py"
+# - docker run myimage /bin/sh -c "python screen_2.py"
 # checking results in csv file
-- docker run myimage /bin/sh -c "cat my_dataset.csv"
+# - docker run myimage /bin/sh -c "cat my_dataset.csv"
