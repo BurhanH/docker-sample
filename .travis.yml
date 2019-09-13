@@ -1,14 +1,22 @@
 services:
   - docker
 
-before_install:
-- docker build --tag=myimage .
+# Version 1
+# before_install:
+# - docker build --tag=myimage .
 # - docker run -d --name myimage -v $(pwd):/user/baur myimage:latest tail -f /dev/null
 # - docker ps
 
-script:
+# script:
 # - docker exec -t myimage bash -c "ls -alh"
 # - docker exec -t myimage bash -c "pwd"
 # - docker exec -t myimage bash -c "python -v"
 # - docker exec -t myimage bash -c "python screen.py" 
+
+# Version 2
+before_install:
+- docker build --tag=myimage .
+
+script:
 - docker run myimage /bin/sh -c "python screen.py"
+- docker run myimage /bin/sh -c "python screen_2.py"
