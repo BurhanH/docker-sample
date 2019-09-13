@@ -7,4 +7,4 @@ before_install:
 - docker ps
 
 script:
-- docker exec -t myimage bash -c ls
+- docker exec -t myimage bash -c python screen.py 
