@@ -18,5 +18,5 @@ before_install:
 - docker build --tag=myimage .
 
 script:
-- docker run myimage /bin/sh -c "python screen.py && ls -lah && tail -n 20 my_dataset.csv"
-- docker run myimage /bin/sh -c "python screen_2.py && ls -lah && tail -n 20 my_dataset.csv"
+- docker run myimage /bin/sh -c "python screen.py && ls -lah && head -n 10 my_dataset.csv && echo ... && tail -n 10 my_dataset.csv"
+- docker run myimage /bin/sh -c "python screen_2.py && ls -lah && head -n 10 my_dataset.csv && echo ... && tail -n 10 my_dataset.csv"
